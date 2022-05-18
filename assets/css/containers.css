@@ -1,0 +1,12 @@
+.landing-section {
+  height: 600px;
+}
+
+#homepage-landing {
+  background-image: url('/assets/images/homepage.png');
+  background-size: cover;
+}
+
+.inner-container {
+  padding: 20px 0;
+}
