@@ -1,0 +1,69 @@
+#lerp-carousel {
+  margin-top: 30px;  
+}
+
+.carousel-item {
+  /* width: 100vh; */
+  padding: 0 10px;
+}
+
+.carousel-image {
+  width: 100%;
+}
+
+.carousel-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  box-shadow: 0.5rem 0.5rem 1.25rem rgba(0, 0, 0, 0.2)
+}
+
+.lerp-carousel-track {
+  /* display: inline-flex; */
+  /* overflow: hidden; */
+  transform: translateX();
+  transition: 0.3s ease-out;
+  cursor: grab;
+  height: 50vh;
+  width: 100vh;
+}
+
+.carousel-text {
+  text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+
+
+  #lerp {
+    position: relative;
+    /* height: 100vh; */
+  }
+
+  #lerp .inner-container {
+    position: sticky;
+    top: 0px; 
+    left: 0;
+    overflow: hidden;
+    /* height: 100%; */
+  }
+  #lerp-carousel {
+    transition: 5;
+    width: 1700px;
+    top: 0;
+    transition: 1s ease-out
+  }
+
+  .lerp-carousel-track {
+    height: 550px;
+
+  }
+
+  .carousel-image img {
+    max-width: 600px;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0.5rem 0.5rem 1.25rem rgba(0, 0, 0, 0.2)
+  }
+}
+

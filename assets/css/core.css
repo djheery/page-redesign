@@ -9,16 +9,29 @@ body {
   letter-spacing: 2px;
 }
 
-h1, h2, h3 {
-  margin: 20px 0;
+h2 {
+  font-size: 1.2rem;
 }
 
+h1, h2, h3 {
+  margin: 20px 0;
+  letter-spacing: 3px;
+}
+
+.bg-gray {
+  background-color: #f4f4f4;
+}
 p {
   margin: 15px 0;
 }
 
 ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 header {
@@ -72,8 +85,8 @@ header {
   right: 50px;
 }
 
-section {
-  margin-top: 40px;
+.section-mgb {
+  margin-bottom: 50px;
 }
 
 .text-center-section {
@@ -81,9 +94,11 @@ section {
   margin: auto;
 }
 
+
+
 .block-r {
   background-color: #FFF;
-  height: 100px;
+  height: 80px;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -91,19 +106,20 @@ section {
 }
 .block-l {
   background-color: #FFF;
-  height: 100px;
+  height: 80px;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 44.5%;
 }
 
+
 .triangle-l {
   width: 0;
   height: 0;
   bottom: 0;
-  border-bottom: 100px solid #fff;
-  border-right: 100px solid transparent;
+  border-bottom: 80px solid #fff;
+  border-right: 80px solid transparent;
   z-index: 4;
   left: 44.5%
 }
@@ -112,8 +128,8 @@ section {
   height: 0;
   bottom: 0;
   right: 44.5%;
-  border-bottom: 100px solid #fff;
-  border-left: 100px solid transparent;
+  border-bottom: 80px solid #fff;
+  border-left: 80px solid transparent;
 }
 
 #tax-advisor-cta {
@@ -126,4 +142,74 @@ section {
 
 #lerp-carousel {
   flex-direction:  row;
+}
+
+.btn {
+  border: 1px solid #000;
+  max-width: 135px;
+  text-align: center;
+  margin: auto;
+  padding: 10px 5px;
+}
+
+#qualifications .inner-container {
+ height: 500px;
+ overflow: hidden;
+}
+
+#qualifications .inner-container {
+  text-align: center;
+}
+
+.slider {
+  height: 250px;
+  cursor: grab;
+}
+
+.slider-track {
+  transition: .5s ease-in;
+}
+
+.slider-img {
+  position: absolute;
+  width: 100%;
+  top: -10px;
+}
+
+.odd-position {
+  top: 10px;
+}
+.odd-odd-position {
+  top: 30px;
+}
+
+.spears {
+  top: -40px;
+}
+
+.padded-section {
+  padding: 20px !important;
+}
+
+@media only screen and (min-width: 1000px) {
+  .slider-img {
+    position: relative;
+    width: 10%;
+  }
+
+  .slider-img img {
+    /* height: 100px; */
+  }
+
+  .slider-track {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .spears {
+    display: none;
+  }
+
+  
 }

@@ -10,3 +10,31 @@
 .inner-container {
   padding: 20px 0;
 }
+
+header {
+  display: none;
+}
+
+
+section {
+  /* padding: 20px; */
+}
+
+#lerp-carousel {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 800px) {
+  header {
+    display: block;
+  }
+
+  #lerp-carousel {
+    overflow: unset;
+  }
+
+
+  section {
+    padding: unset;
+  }
+}
