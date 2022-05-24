@@ -1,0 +1,41 @@
+.mtt-slider-track {
+  overflow: hidden;
+}
+
+.meet-the-team-slider {
+  padding: 0 20px;
+  
+}
+
+.mtt-item {
+  position: absolute;
+}
+
+ .mtt-img {
+    background-color: #cfd7df;
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: auto;
+  }
+  
+  .mtt-img img {
+    max-width: 300px;
+    height: auto;
+  }
+
+
+@media only screen and (min-width: 1000px) {
+  .mtt-slider-track {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .mtt-item {
+    width: 25%;
+  }
+  
+ 
+
+}

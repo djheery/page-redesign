@@ -23,6 +23,7 @@ h1, h2, h3 {
 }
 p {
   margin: 15px 0;
+  max-width: 1000px;
 }
 
 ul {
@@ -102,7 +103,7 @@ header {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 44.5%;
+  width: 45.5%;
 }
 .block-l {
   background-color: #FFF;
@@ -110,7 +111,7 @@ header {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 44.5%;
+  width: 45.5%;
 }
 
 
@@ -121,13 +122,13 @@ header {
   border-bottom: 80px solid #fff;
   border-right: 80px solid transparent;
   z-index: 4;
-  left: 44.5%
+  left: 45.5%
 }
 .triangle-r {
   width: 0;
   height: 0;
   bottom: 0;
-  right: 44.5%;
+  right: 45.5%;
   border-bottom: 80px solid #fff;
   border-left: 80px solid transparent;
 }
@@ -189,6 +190,11 @@ header {
 
 .padded-section {
   padding: 20px !important;
+}
+
+.mtt-img img {
+  max-width: 600px;
+  height: auto;
 }
 
 @media only screen and (min-width: 1000px) {
