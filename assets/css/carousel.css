@@ -19,12 +19,10 @@
 }
 
 .lerp-carousel-track {
-  /* display: inline-flex; */
-  /* overflow: hidden; */
   transform: translateX();
   transition: 0.3s ease-out;
   cursor: grab;
-  height: 50vh;
+  height: 65vh;
   width: 100vh;
 }
 
@@ -37,7 +35,6 @@
 
   #lerp {
     position: relative;
-    /* height: 100vh; */
   }
 
   #lerp .inner-container {
@@ -45,17 +42,16 @@
     top: 0px; 
     left: 0;
     overflow: hidden;
-    /* height: 100%; */
   }
   #lerp-carousel {
     transition: 5;
-    width: 1900px;
+    width: 2600px;
     top: 0;
     transition: 1s ease-out
   }
 
   .lerp-carousel-track {
-    height: 550px;
+    /* height: unset; */
 
   }
 

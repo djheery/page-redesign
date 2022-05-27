@@ -1,22 +1,25 @@
 .mtt-slider-track {
-  overflow: hidden;
+  height: 400px;
+  transition: .3s all ease-out
 }
 
 .meet-the-team-slider {
-  padding: 0 20px;
-  
+  overflow: hidden;
+  /* padding: 0 20px; */
 }
 
 .mtt-item {
   position: absolute;
+  width: 100vw;
 }
 
  .mtt-img {
     background-color: #cfd7df;
-    width: 100%;
+    max-width: 90vw;
     height: auto;
     display: flex;
     margin: auto;
+    border-radius: 20px;
   }
   
   .mtt-img img {
@@ -31,8 +34,18 @@
     flex-direction: row;
     justify-content: space-around;
   }
+
+  .mtt-img {
+    height: 400px;
+  }
+
+  .mtt-img img {
+    max-width: 500px;
+    height: auto;
+  }
   
   .mtt-item {
+    position: unset;
     width: 25%;
   }
   

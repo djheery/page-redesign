@@ -1,7 +1,7 @@
 const MTT_SLIDER = (() => {
   const slider = document.querySelector('.mtt-slider-track');
   const slides = Array.from(document.querySelector('.mtt-slider-track').children);
-
+  console.log(slides)
   const resizeListener = () => {
     window.addEventListener('resize', e => QUAL_SLIDER.init)
   }
@@ -26,6 +26,8 @@ const MTT_SLIDER = (() => {
   const setSlidePosition = () => {
     slides.forEach((slide, idx) => {      
       slide.style.transform = `translateX(${slide.getBoundingClientRect().width * idx}px)` 
+
+      console.log(slide)
     })
   }
   
@@ -99,7 +101,7 @@ const MTT_SLIDER = (() => {
   
   return {
     init: () => {
-      if (window.matchMedia('max-width: 500px')) {
+      if (window.matchMedia('max-width: 900px')) {
         resizeListener();
         disableContextMenu();
         setSlidePosition();
@@ -112,7 +114,7 @@ const MTT_SLIDER = (() => {
 })();
 
 window.addEventListener('DOMContentLoaded', e => {
-  if(window.matchMedia('(max-width: 1000px)').matches) {
+  if(window.matchMedia('(max-width: 800px)').matches) {
     MTT_SLIDER.init()
   } else {
     console.log('called')

@@ -168,7 +168,7 @@ header {
 }
 
 .slider-track {
-  transition: .5s ease-in;
+  transition: .5s ease-out;
 }
 
 .slider-img {
@@ -215,6 +215,10 @@ header {
 
   .spears {
     display: none;
+  }
+
+  .pc {
+    margin: auto;
   }
 
   
