@@ -1,7 +1,7 @@
-const QUAL_SLIDER = (() => {
-  const slider = document.querySelector('.slider-track');
-  const slides = Array.from(document.querySelector('.slider-track').children);
-
+const PP_SLIDER = (() => {
+  const slider = document.querySelector('.pp-slide-track');
+  const slides = Array.from(document.querySelector('.pp-slide-track').children);
+  console.log(slides)
   const resizeListener = () => {
     window.addEventListener('resize', e => QUAL_SLIDER.init)
   }
@@ -26,6 +26,7 @@ const QUAL_SLIDER = (() => {
   const setSlidePosition = () => {
     slides.forEach((slide, idx) => {      
       slide.style.transform = `translateX(${slide.getBoundingClientRect().width * idx}px)` 
+      // console.log(slide)
     })
   }
   
@@ -113,7 +114,7 @@ const QUAL_SLIDER = (() => {
 
 window.addEventListener('DOMContentLoaded', e => {
   if(window.matchMedia('(max-width: 1000px)').matches) {
-    QUAL_SLIDER.init()
+    PP_SLIDER.init()
   } else {
     console.log('called')
   }

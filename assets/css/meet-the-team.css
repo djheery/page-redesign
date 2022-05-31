@@ -35,6 +35,11 @@
     justify-content: space-around;
   }
 
+  .meet-the-team-slider {
+    height: 600px;
+    /* padding: 0 20px; */
+  }
+
   .mtt-img {
     height: 400px;
   }

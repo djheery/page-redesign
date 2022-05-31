@@ -19,7 +19,7 @@
 }
 
 .lerp-carousel-track {
-  transform: translateX();
+  transform: translateX(0);
   transition: 0.3s ease-out;
   cursor: grab;
   height: 65vh;
@@ -30,33 +30,35 @@
   text-align: center;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
 
 
   #lerp {
     position: relative;
+    
   }
 
   #lerp .inner-container {
     position: sticky;
-    top: 0px; 
+    padding-top: 100px;
+    top: 100px; 
     left: 0;
     overflow: hidden;
   }
   #lerp-carousel {
     transition: 5;
-    width: 2600px;
-    top: 0;
+    width: 2500px;
+
     transition: 1s ease-out
   }
 
   .lerp-carousel-track {
     /* height: unset; */
-
+    
   }
 
   .carousel-image img {
-    max-width: 600px;
+    max-width: 750px;
     height: auto;
     border-radius: 25px;
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(0, 0, 0, 0.2)

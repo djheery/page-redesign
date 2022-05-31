@@ -148,11 +148,12 @@ const LERP_CAROUSEL = (() => {
     lerpState.current = parseFloat(lerp(
                                         lerpState.current,
                                         lerpState.target, 
-                                        lerpState.ease)).toFixed(2);
+                                        lerpState.ease).toFixed(2));
+      lerpState.target = window.scrollY - (document.querySelector('#lerp').getBoundingClientRect().top + 1000);
+      setTransform(slider, `translateX(-${lerpState.current}px)`)
 
-    lerpState.target = window.scrollY - (document.querySelector('#lerp').getBoundingClientRect().top + 1000);
-    setTransform(slider, `translateX(-${lerpState.current}px)`)
-    requestAnimationFrame(animate2);
+    
+      
   }
 
 
@@ -167,7 +168,6 @@ const LERP_CAROUSEL = (() => {
       window.addEventListener('scroll', e => {
         if(window.scrollY > document.querySelector('#lerp').getBoundingClientRect().top) {
           animate2()
-          
         } 
       })
     }
@@ -176,7 +176,7 @@ const LERP_CAROUSEL = (() => {
 
 window.addEventListener('DOMContentLoaded', e => {
   
-  const mobile = window.matchMedia('(max-width: 800px)')
+  const mobile = window.matchMedia('(max-width: 1000px)')
   if(mobile.matches) {
     MOBILE_CAROUSEL.init();
   } else {

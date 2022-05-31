@@ -26,8 +26,6 @@ const MTT_SLIDER = (() => {
   const setSlidePosition = () => {
     slides.forEach((slide, idx) => {      
       slide.style.transform = `translateX(${slide.getBoundingClientRect().width * idx}px)` 
-
-      console.log(slide)
     })
   }
   
@@ -101,7 +99,7 @@ const MTT_SLIDER = (() => {
   
   return {
     init: () => {
-      if (window.matchMedia('max-width: 900px')) {
+      if (window.matchMedia('max-width: 1000px')) {
         resizeListener();
         disableContextMenu();
         setSlidePosition();
@@ -114,7 +112,7 @@ const MTT_SLIDER = (() => {
 })();
 
 window.addEventListener('DOMContentLoaded', e => {
-  if(window.matchMedia('(max-width: 800px)').matches) {
+  if(window.matchMedia('(max-width: 1000px)').matches) {
     MTT_SLIDER.init()
   } else {
     console.log('called')
