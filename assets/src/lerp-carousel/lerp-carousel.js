@@ -1,6 +1,8 @@
 const MOBILE_CAROUSEL = (() => {
   const slider = document.querySelector('.lerp-carousel-track');
   const slides = Array.from(document.querySelector('.lerp-carousel-track').children);
+  const dotContainer = document.querySelector(".lerp-carousel-dots");
+  let dots;
 
   const resizeListener = () => {
     window.addEventListener('resize', e => LERP_CAROUSEL_APP.init())
@@ -28,6 +30,22 @@ const MOBILE_CAROUSEL = (() => {
       slide.style.transform = `translateX(${slide.getBoundingClientRect().width * idx}px)` 
     })
   }
+
+  const createDots = () => {
+    slides.forEach((s, idx) => {
+
+      if(idx == 0) {
+        dotContainer.innerHTML += `
+          <div class="dot dot-active"></div>
+        `
+      } else {
+        dotContainer.innerHTML += `
+          <div class="dot"></div>
+        `
+      }
+    })
+    dots = Array.from(dotContainer.querySelectorAll('.dot'));
+  }
   
   const mobileSlideEvents = () => {
     slides.forEach((slide, idx) => {
@@ -44,6 +62,16 @@ const MOBILE_CAROUSEL = (() => {
     })  
   }
 
+  const changeDot = () => {
+    dots.forEach((d, idx) => {
+      if(idx === mobileState.currentIdx) {
+        d.classList.add('dot-active');
+      } else {
+        d.classList.remove('dot-active');
+      }
+    })
+  }
+
   const touchStart = (idx) => {
     return (e) => {
       mobileState.currentIdx = idx;
@@ -57,11 +85,15 @@ const MOBILE_CAROUSEL = (() => {
     mobileState.isDragging = false;
     const movedBy = mobileState.currentTranslate - mobileState.prevTranslate;
 
-    if(movedBy < -100 && mobileState.currentIdx < slides.length - 1)
+    if(movedBy < -100 && mobileState.currentIdx < slides.length - 1) {
       mobileState.currentIdx += 1;
+      changeDot();
+    }
 
-    if(movedBy > 100 && mobileState.currentIdx > 0)
+    if(movedBy > 100 && mobileState.currentIdx > 0) {
       mobileState.currentIdx -= 1;
+      changeDot()
+    }
 
     setPositionByIdx();
 
@@ -102,6 +134,7 @@ const MOBILE_CAROUSEL = (() => {
       resizeListener();
       disableContextMenu();
       setSlidePosition();
+      createDots();
       mobileSlideEvents();
     }
   } 

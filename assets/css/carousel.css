@@ -30,9 +30,27 @@
   text-align: center;
 }
 
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #e6e6e6
+}
+
+.dot-active {
+  background-color: black !important;
+}
+
 @media only screen and (min-width: 1000px) {
 
+  .lerp-carousel-dots {
+    display: none;
+  }
 
+  .dot {
+    display: none;
+  }
   #lerp {
     position: relative;
     
@@ -40,7 +58,7 @@
 
   #lerp .inner-container {
     position: sticky;
-    padding-top: 100px;
+    padding-top: 50px;
     top: 100px; 
     left: 0;
     overflow: hidden;
@@ -58,7 +76,7 @@
   }
 
   .carousel-image img {
-    max-width: 750px;
+    max-width: 650px;
     height: auto;
     border-radius: 25px;
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(0, 0, 0, 0.2)
