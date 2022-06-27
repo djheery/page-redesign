@@ -56,6 +56,11 @@
 
 @media only screen and (min-width: 1000px) {
 
+  #lerp .inner-container .section-heading p {
+    text-align: center;
+    margin: auto;
+  }
+
   .lerp-carousel-dots {
     display: none;
   }
@@ -76,7 +81,7 @@
   }
   #lerp-carousel {
     transition: 5;
-    width: 2500px;
+    width: 1800px;
 
     transition: 1s ease-out
   }
@@ -87,7 +92,7 @@
   }
 
   .carousel-item-inner-container {
-    max-width: 70%;
+    max-width: 75%;
   }
 
   .carousel-image img {
