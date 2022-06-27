@@ -44,6 +44,8 @@
 
 @media only screen and (min-width: 768px) {
 
+  
+
   .carousel-item-inner-container {
     max-width: 60%;
     margin: auto;
@@ -55,6 +57,10 @@
 }
 
 @media only screen and (min-width: 1000px) {
+
+  .carousel-item {
+    max-width: 600px;
+  }
 
   #lerp .inner-container .section-heading p {
     text-align: center;
@@ -88,15 +94,15 @@
 
   .lerp-carousel-track {
     /* height: unset; */
-    
+    height: 450px;
   }
 
   .carousel-item-inner-container {
-    max-width: 75%;
+    max-width: 100%;
   }
 
   .carousel-image {
-    max-width: 650px;
+    max-width: 100%;
     height: auto;
     margin: auto;
     text-align: center;
@@ -109,3 +115,20 @@
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  .carousel-item {
+    max-width: 750px;
+  }
+
+  .lerp-carousel-track {
+    /* height: unset; */
+    height: 550px;
+  }
+
+  #lerp-carousel {
+    transition: 5;
+    width: 2100px;
+
+    transition: 1s ease-out
+  }
+}

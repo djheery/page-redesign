@@ -199,7 +199,7 @@ const LERP_CAROUSEL = (() => {
       const sliderRect = slider.getBoundingClientRect();
       const lerpRect = document.querySelector("#lerp").getBoundingClientRect();
       window.addEventListener('scroll', e => {
-        if(window.scrollY > document.querySelector('#lerp').getBoundingClientRect().top) {
+        if(window.scrollY > (document.querySelector('#lerp').getBoundingClientRect().top)) {
           animate2()
         } 
       })
