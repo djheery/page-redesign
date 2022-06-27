@@ -21,6 +21,10 @@ h1, h2, h3 {
 .bg-gray {
   background-color: #f4f4f4;
 }
+
+.bg-blue-gray {
+  background-color:  #2f4558;
+}
 p {
   margin: 15px 0;
   max-width: 1000px;
@@ -93,6 +97,10 @@ header {
 .text-center-section {
   max-width: 850px;
   margin: auto;
+}
+
+.text-white {
+  color:  white;
 }
 
 
@@ -223,6 +231,11 @@ header {
 
   .text-section {
     padding: 0 20px;
+  }
+
+  .slider-img img {
+    height: 120px;
+    width: auto;
   }
 
   

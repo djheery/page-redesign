@@ -24,7 +24,7 @@ section {
 
 @media only screen and (min-width: 1000px) {
 
-  .inner-container {
+  .inner-container, #common-questions  h2{
     padding: 20px 30px;
   }
 
