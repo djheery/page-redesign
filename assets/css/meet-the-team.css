@@ -1,3 +1,7 @@
+#our-team {
+  height: 800px;
+}
+
 .mtt-slider-track {
   height: 350px;
   transition: .3s all ease-out
@@ -5,7 +9,7 @@
 
 .meet-the-team-slider {
   overflow: hidden;
-  /* padding: 0 20px; */
+  height: 350px;
 }
 
 .mtt-item {
@@ -28,8 +32,22 @@
     margin: auto;
   }
 
+  .mtt-carousel-dots {
+    margin-top: 20px;
+  }
+
+  .ic2 {
+    max-width: 1200px;
+    margin: auto;
+  }
+
 
 @media only screen and (min-width: 768px) {
+
+  #our-team {
+    height: unset;
+  }
+  
 
   .mtt-carousel-dots {
     display: none;
@@ -37,9 +55,10 @@
   .mtt-slider-track {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    max-width: 1100px;
-    justify-content: space-around;
+    /* gap: 10px; */
+    max-width: 1200px;
+    justify-content: space-between;
+    margin: auto;
   }
 
   .meet-the-team-slider {
@@ -71,4 +90,39 @@
   
  
 
+}
+
+@media only screen and (min-width: 1000px) {
+  .mtt-carousel-dots {
+    display: none;
+  }
+  .mtt-slider-track {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 1320px;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .meet-the-team-slider {
+    height: 400px;
+    /* padding: 0 20px; */
+  }
+
+  .mtt-img {
+    height: 269px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .mtt-img img {
+    max-width: 650px;
+    height: auto;
+  } 
+  
+  .mtt-item {
+    position: unset;
+    width: 30%
+  }
 }
