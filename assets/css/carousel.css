@@ -58,8 +58,7 @@
 
   #lerp .inner-container {
     position: sticky;
-    padding-top: 50px;
-    top: 100px; 
+    top: 0px; 
     left: 0;
     overflow: hidden;
   }
@@ -76,7 +75,7 @@
   }
 
   .carousel-image img {
-    max-width: 650px;
+    max-width: 85%;
     height: auto;
     border-radius: 25px;
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(0, 0, 0, 0.2)
