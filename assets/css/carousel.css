@@ -3,7 +3,7 @@
 }
 
 .carousel-item {
-  /* width: 100vh; */
+  width: 100%;
   padding: 0 10px;
 }
 
@@ -22,7 +22,7 @@
   transform: translateX(0);
   transition: 0.3s ease-out;
   cursor: grab;
-  height: 65vh;
+  height: 450px;
   width: 100vh;
 }
 
@@ -40,6 +40,18 @@
 
 .dot-active {
   background-color: black !important;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .carousel-item-inner-container {
+    max-width: 60%;
+    margin: auto;
+  }
+
+  .lerp-carousel-track {
+    height: 500px;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -72,6 +84,10 @@
   .lerp-carousel-track {
     /* height: unset; */
     
+  }
+
+  .carousel-item-inner-container {
+    max-width: 70%;
   }
 
   .carousel-image img {
