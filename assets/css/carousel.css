@@ -95,9 +95,16 @@
     max-width: 75%;
   }
 
+<<<<<<< HEAD
   .carousel-image img {
     max-width: 85%;
+=======
+  .carousel-image {
+    max-width: 650px;
+>>>>>>> beec3a0f933dfa4a1bc77ffce53e75a6a4fa2f76
     height: auto;
+    margin: auto;
+    text-align: center;
     border-radius: 25px;
     box-shadow: 0.5rem 0.5rem 1.25rem rgba(0, 0, 0, 0.2)
   }
