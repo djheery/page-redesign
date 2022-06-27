@@ -1,7 +1,10 @@
 const MTT_SLIDER = (() => {
   const slider = document.querySelector('.mtt-slider-track');
   const slides = Array.from(document.querySelector('.mtt-slider-track').children);
-  console.log(slides)
+  const dotContainer = document.querySelector(".mtt-carousel-dots");
+  let dots;
+
+
   const resizeListener = () => {
     window.addEventListener('resize', e => QUAL_SLIDER.init)
   }
@@ -29,6 +32,22 @@ const MTT_SLIDER = (() => {
     })
   }
   
+  const createDots = () => {
+    slides.forEach((s, idx) => {
+
+      if(idx == 0) {
+        dotContainer.innerHTML += `
+          <div class="dot dot-active"></div>
+        `
+      } else {
+        dotContainer.innerHTML += `
+          <div class="dot"></div>
+        `
+      }
+    })
+    dots = Array.from(dotContainer.querySelectorAll('.dot'));
+  }
+
   const mobileSlideEvents = () => {
     slides.forEach((slide, idx) => {
       const slideImage = slide.querySelector('img');
@@ -53,15 +72,29 @@ const MTT_SLIDER = (() => {
     }
   }
 
+  const changeDot = () => {
+    dots.forEach((d, idx) => {
+      if(idx === mobileState.currentIdx) {
+        d.classList.add('dot-active');
+      } else {
+        d.classList.remove('dot-active');
+      }
+    })
+  }
+
   const touchEnd = () => {
     mobileState.isDragging = false;
     const movedBy = mobileState.currentTranslate - mobileState.prevTranslate;
 
-    if(movedBy < -100 && mobileState.currentIdx < slides.length - 1)
+    if(movedBy < -100 && mobileState.currentIdx < slides.length - 1) {
       mobileState.currentIdx += 1;
+      changeDot();
+    }
 
-    if(movedBy > 100 && mobileState.currentIdx > 0)
+    if(movedBy > 100 && mobileState.currentIdx > 0) {
       mobileState.currentIdx -= 1;
+      changeDot();
+    }
 
     setPositionByIdx();
 
@@ -99,10 +132,11 @@ const MTT_SLIDER = (() => {
   
   return {
     init: () => {
-      if (window.matchMedia('max-width: 1000px')) {
+      if (window.matchMedia('max-width: 767px')) {
         resizeListener();
         disableContextMenu();
         setSlidePosition();
+        createDots();
         mobileSlideEvents();
 
       }
@@ -112,7 +146,7 @@ const MTT_SLIDER = (() => {
 })();
 
 window.addEventListener('DOMContentLoaded', e => {
-  if(window.matchMedia('(max-width: 1000px)').matches) {
+  if(window.matchMedia('(max-width: 767px)').matches) {
     MTT_SLIDER.init()
   } else {
     console.log('called')

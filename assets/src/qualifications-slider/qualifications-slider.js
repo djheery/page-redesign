@@ -1,6 +1,9 @@
 const QUAL_SLIDER = (() => {
   const slider = document.querySelector('.slider-track');
   const slides = Array.from(document.querySelector('.slider-track').children);
+  const dotContainer = document.querySelector(".qual-carousel-dots");
+  let dots;
+
 
   const resizeListener = () => {
     window.addEventListener('resize', e => QUAL_SLIDER.init)
@@ -28,6 +31,23 @@ const QUAL_SLIDER = (() => {
       slide.style.transform = `translateX(${slide.getBoundingClientRect().width * idx}px)` 
     })
   }
+
+
+  const createDots = () => {
+    slides.forEach((s, idx) => {
+
+      if(idx == 0) {
+        dotContainer.innerHTML += `
+          <div class="dot dot-active"></div>
+        `
+      } else {
+        dotContainer.innerHTML += `
+          <div class="dot"></div>
+        `
+      }
+    })
+    dots = Array.from(dotContainer.querySelectorAll('.dot'));
+  }
   
   const mobileSlideEvents = () => {
     slides.forEach((slide, idx) => {
@@ -42,6 +62,17 @@ const QUAL_SLIDER = (() => {
       slide.addEventListener('mouseleave', touchEnd)
       slide.addEventListener('mousemove', touchMove)
     })  
+  }
+
+
+  const changeDot = () => {
+    dots.forEach((d, idx) => {
+      if(idx === mobileState.currentIdx) {
+        d.classList.add('dot-active');
+      } else {
+        d.classList.remove('dot-active');
+      }
+    })
   }
 
   const touchStart = (idx) => {
@@ -59,9 +90,11 @@ const QUAL_SLIDER = (() => {
 
     if(movedBy < -100 && mobileState.currentIdx < slides.length - 1)
       mobileState.currentIdx += 1;
+      changeDot();
 
     if(movedBy > 100 && mobileState.currentIdx > 0)
       mobileState.currentIdx -= 1;
+      changeDot();
 
     setPositionByIdx();
 
@@ -99,12 +132,12 @@ const QUAL_SLIDER = (() => {
   
   return {
     init: () => {
-      if (window.matchMedia('max-width: 1000px')) {
+      if (window.matchMedia('max-width: 768px')) {
         resizeListener();
         disableContextMenu();
         setSlidePosition();
+        createDots();
         mobileSlideEvents();
-
       }
     }
   } 
@@ -112,7 +145,7 @@ const QUAL_SLIDER = (() => {
 })();
 
 window.addEventListener('DOMContentLoaded', e => {
-  if(window.matchMedia('(max-width: 1000px)').matches) {
+  if(window.matchMedia('(max-width: 767px)').matches) {
     QUAL_SLIDER.init()
   } else {
     console.log('called')
