@@ -27,7 +27,7 @@ const MOBILE_CAROUSEL = (() => {
 
   const setSlidePosition = () => {
     slides.forEach((slide, idx) => {      
-      slide.style.transform = `translateX(${slide.getBoundingClientRect().width * idx}px)` 
+      slide.style.transform = `translateX(${(slide.getBoundingClientRect().width) * idx}px)` 
     })
   }
 

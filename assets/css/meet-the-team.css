@@ -125,4 +125,11 @@
     position: unset;
     width: 30%
   }
+
+  .mtt-text a {
+    transition: all .3s ease-out
+  }
+  .mtt-text a:hover {
+    color: #ba992f;
+  }
 }

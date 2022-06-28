@@ -47,6 +47,15 @@ height: auto;
   
 } 
 
+.whole-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
 @media only screen and (min-width: 768px) {
   .pp-slide-track {
     display: flex;
@@ -55,20 +64,21 @@ height: auto;
   }
 
   .pp-slide-item {
-    position: unset;
+    position: relative;
     transition: all .5s ease-out;
   }
 
-  .pp-slide-item:hover {
-    transform: scale(1.02);
-    cursor: pointer;
-  }
+
 
   .pp-s-item-img img {
     max-width: 100%;
     height: auto;
-    }
-    
+  }
+  
+  .pp-s-item-img {
+
+    transition: all .5s ease-out;
+  }
 
   #popular-pages .inner-container {
     overflow: hidden;
@@ -95,5 +105,10 @@ height: auto;
 
   .pp-slide-text {
     font-size: .7rem;
+  }
+
+  .whole-link:hover + .pp-s-item-img {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 }
