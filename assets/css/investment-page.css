@@ -5,11 +5,15 @@
   background-repeat: no-repeat;
 }
 
-.page-landing {
+.page-landing, .ov-none {
   overflow: hidden;
 }
 .pl-top-section {
   min-height: 600px;
+}
+
+.ic3 {
+  padding: 20px;
 }
 
 .section-heading h2 {

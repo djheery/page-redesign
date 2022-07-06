@@ -174,7 +174,7 @@ const LERP_CAROUSEL = (() => {
   const setParams = () => {
     lerpState.sliderWidth = slider.getBoundingClientRect().width;
     lerpState.imageWidth = lerpState.sliderWidth / slides.length;
-    document.getElementById('lerp').style.height = `${lerpState.sliderWidth - (window.innerWidth - window.innerHeight)}px`;
+    document.getElementById('lerp').style.height = `${lerpState.sliderWidth - (window.innerWidth - window.innerHeight) + 900}px`;
   }
 
   const animate2 = () => {
@@ -182,7 +182,7 @@ const LERP_CAROUSEL = (() => {
                                         lerpState.current,
                                         lerpState.target, 
                                         lerpState.ease).toFixed(2));
-      lerpState.target = window.scrollY - (document.querySelector('#lerp').getBoundingClientRect().top + 1000);
+      lerpState.target = window.scrollY - (document.querySelector('#lerp').getBoundingClientRect().top + 1500);
       setTransform(slider, `translateX(-${lerpState.current}px)`)
 
     
@@ -196,10 +196,10 @@ const LERP_CAROUSEL = (() => {
       setParams();
     },
     animate: () => {
-      const sliderRect = slider.getBoundingClientRect();
+      const sliderRect = slider.getBoundingClientRect() + 300;
       const lerpRect = document.querySelector("#lerp").getBoundingClientRect();
       window.addEventListener('scroll', e => {
-        if(window.scrollY > (document.querySelector('#lerp').getBoundingClientRect().top)) {
+        if(window.scrollY > (document.querySelector('#lerp').getBoundingClientRect().top + 1500)) {
           animate2()
         } 
       })
