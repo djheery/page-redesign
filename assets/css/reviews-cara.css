@@ -1,0 +1,16 @@
+.reviews-carousel {
+  height: 300px;
+}
+
+.reviews-carousel-item {
+  max-width: 90%;
+  margin: auto;
+}
+
+.r-carousel-item-inner-container {
+  background-color: #fff;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 10px;
+  border: #e6e6e6 solid 1px;
+}
