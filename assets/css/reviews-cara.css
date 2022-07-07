@@ -1,10 +1,20 @@
 .reviews-carousel {
-  height: 300px;
+  height: 250px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews {
+  overflow: hidden;
+}
+
+.reviews .inner-container {
+  overflow: hidden;
 }
 
 .reviews-carousel-item {
-  max-width: 90%;
-  margin: auto;
+  width: 100%;
+  position: absolute;
 }
 
 .r-carousel-item-inner-container {
@@ -13,4 +23,39 @@
   padding: 10px;
   border-radius: 10px;
   border: #e6e6e6 solid 1px;
+  max-width: 90%;
+  margin: auto;
+}
+
+.reviews-carousel-track {
+  transition: all .3s ease-out;
+  height: 100%; 
+  /* width: 100%; */
+}
+
+/* .reviews-carousel-dots {
+  margin-bottom: 40px ;
+} */
+
+
+@media only screen and (min-width: 1000px) {
+  
+  .reviews-carousel-dots {
+    display: flex !important; 
+    height: 20px;
+    margin-bottom: 20px;
+  }
+
+  .reviews-carousel {
+    height: 200px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .reviews-carousel-dots .dot {
+    display: flex;
+  }
+  .r-carousel-item-inner-container {
+    max-width: 40%;
+  }
 }
