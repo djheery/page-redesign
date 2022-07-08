@@ -30,6 +30,10 @@ p {
   max-width: 1000px;
 }
 
+.footer-container {
+  display: none;
+}
+
 ul {
   list-style: none;
 }
@@ -203,6 +207,8 @@ header {
   padding: 20px 40px !important;
 }
 
+
+
 @media only screen and (min-width: 768px) {
   .qual-carousel-dots {
     display: none;
@@ -239,9 +245,12 @@ header {
     margin: auto;
    }
 
+
 }
 
 @media only screen and (min-width: 1000px) {
+
+
 
   #qualifications .inner-container {
     height: 380px;
@@ -259,7 +268,34 @@ header {
     padding: 0 20px;
   }
 
+  #tax-advisor-cta .inner-container h2 a {
+    transition: color .3s ease-out;
+  }
 
+  #tax-advisor-cta .inner-container h2 a:hover {
+    color: #ba992f;
+    cursor: pointer;
+  } 
 
+    /* Footer Container */
+  
+    .footer-container {
+      display: block;
+      padding: 40px 0;
+    }
+    .footer-container .inner-container {
+      border: solid 1px;
+      font-size: 14px;
+      max-width: 1400px;
+
+      margin: auto;
+      height: 100%;
+    }
+    .footer-container .inner-container .flex {
+      justify-content: space-around;
+      overflow: hidden;
+      max-height: 0px;
+      transition: all .3s
+    }
   
 }

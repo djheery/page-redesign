@@ -11,12 +11,12 @@ const INVESTMENT_TOPICS_STATE = (() => {
       topic_sub_sections: [
         {
           sub_section_name: 'UK Tax on Cryptocurrency',
-          sub_section_img: '/assets/images/litecoin-cryptocurrency-on-the-tablet-2021-08-28-09-05-42-utc.png',
+          sub_section_img: '/s/lcoin.png',
           sub_section_link: '#'
         }, 
         {
           sub_section_name: 'US Tax on Cryptocurrency',
-          sub_section_img: '/assets/images/cryptocurrency-logo-of-btc-coin-2021-09-03-05-04-44-utc.png',
+          sub_section_img: '/s/btc-coin.png',
           sub_section_link: '#'
         }
       ]
@@ -28,12 +28,12 @@ const INVESTMENT_TOPICS_STATE = (() => {
       topic_sub_sections: [
         {
           sub_section_name: 'UK Tax on RSUs',
-          sub_section_img: '/assets/images/rsu1.jpg',
+          sub_section_img: '/s/rsu1.jpg',
           sub_section_link: ''
         },
         {
           sub_section_name: 'US Tax on RSUs',
-          sub_section_img: '/assets/images/rsu2.jpg',
+          sub_section_img: '/s/rsu2.jpg',
           sub_section_link: '#'
         }
       ]
@@ -45,12 +45,12 @@ const INVESTMENT_TOPICS_STATE = (() => {
       topic_sub_sections: [
         {
           sub_section_name: 'UK Tax on Real Estate',
-          sub_section_img: '/assets/images/ra1.jpg',
+          sub_section_img: '/s/ra1.jpg',
           sub_section_link: ''
         },
         {
           sub_section_name: 'US Tax on Real Estate',
-          sub_section_img: '/assets/images/ra2.jpg',
+          sub_section_img: '/s/ra2.jpg',
           sub_section_link: ''
         }
       ]

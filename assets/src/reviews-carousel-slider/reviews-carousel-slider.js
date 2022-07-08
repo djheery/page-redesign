@@ -127,7 +127,7 @@ const REV_SLIDER = (() => {
   }
 
   const setPositionByIdx = () => {
-    mobileState.currentTranslate = mobileState.currentIdx * (-window.innerWidth);
+    mobileState.currentTranslate = mobileState.currentIdx * (-document.body.clientWidth);
     mobileState.prevTranslate = mobileState.currentTranslate;
     animateSlider();
   }
