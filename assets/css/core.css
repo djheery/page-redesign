@@ -207,6 +207,49 @@ header {
   padding: 20px 40px !important;
 }
 
+/*
+  ==========================
+  || Client Banner        ||
+  ==========================
+*/
+.press-banner {
+  overflow: hidden;
+  width: 100%;
+  background: #f4f4f4;
+  padding: 20px 0;
+}
+
+
+.press-banner-item img {
+  width: 50px;
+  height: auto;
+}
+
+.press-banner .flex {
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media only screen and (min-width: 500px) {
+  /*
+  ==========================
+  || Client Banner        ||
+  ==========================
+*/
+.press-banner {
+  overflow: hidden;
+  width: 100%;
+}
+
+.press-banner .flex {
+  justify-content: space-around;
+}
+
+.press-banner-item img {
+  width: 80px;
+  height: auto;
+}
+}
 
 
 @media only screen and (min-width: 768px) {
@@ -251,6 +294,19 @@ header {
 @media only screen and (min-width: 1000px) {
 
 
+  .press-banner-item img {
+    width: 110px;
+    height: auto;
+  }
+
+  .press-banner-item {
+    transition: all .3s ease-out
+  }
+
+  .press-banner-item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 
   #qualifications .inner-container {
     height: 380px;
