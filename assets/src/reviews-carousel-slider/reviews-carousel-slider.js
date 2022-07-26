@@ -1,6 +1,7 @@
 const REV_SLIDER = (() => {
+  const state = REV_CAROUSEL_STATE
   const slider = document.querySelector('.reviews-carousel-track');
-  const slides = Array.from(slider.children);
+  let slides;
   const dotContainer = document.querySelector(".reviews-carousel-dots");
   let dots;
 
@@ -26,13 +27,48 @@ const REV_SLIDER = (() => {
     currentIdx: 0,
   }
 
+  const getReviews = () => {
+    let reviews;
+    console.log(slider.dataset.reviewType)
+    if(slider.dataset.reviewType == 'all' || slider.dataset.reviewType == null) 
+      reviews = state.getAllReviews();
+    else {
+      reviews = state.getReviewType(slider.dataset.reviewType);
+      reviews.length == 0 ? reviews = state.getAllReviews() :
+                       reviews = reviews;
+
+    }
+    populateReviewTrack(reviews);
+  }
+
+  const populateReviewTrack = (reviews) => {
+    slider.innerHTML = '';
+    reviews.forEach(r => {
+      slider.innerHTML += `
+      <div class="reviews-carousel-item">
+        <div class="r-carousel-item-inner-container">
+          <div class="r-carousel-img">
+            <img src="${r.img}" alt="">
+            <p class="reviewer-name">${r.name} ${r.profession != '' ? ' - ' + r.profession : ''}</p>
+          </div>
+          <div class="r-carousel-item-text-content text-center" style="margin: 0 auto; max-width: 600px;">
+            <p>${r.content}</p>
+          </div>
+        </div>
+      </div>
+      `
+    });
+
+    slides = Array.from(slider.children);
+    setSlidePosition();
+  }
+
   const setSlidePosition = () => {
     slides.forEach((slide, idx) => {      
       slide.style.transform = `translateX(${slide.getBoundingClientRect().width * idx}px)` 
       console.log(slide);
       console.log(slide.getBoundingClientRect().width)
     })
-
   }
 
 
@@ -61,8 +97,31 @@ const REV_SLIDER = (() => {
       slide.addEventListener('mousedown', touchStart(idx))
       slide.addEventListener('mouseup', touchEnd)
       slide.addEventListener('mouseleave', touchEnd)
-      slide.addEventListener('mousemove', touchMove)
+      slide.addEventListener('mousemove', touchMove);
     })  
+  }
+
+  const desktopSlideEvents = () => {
+    if(document.querySelector('.arrows')) {
+      const arrows = Array.from(document.querySelectorAll('.arrow'));
+      arrows.forEach( a => {
+        a.addEventListener('click', arrowChangeSlide)
+    });
+    }
+  }
+
+  const arrowChangeSlide = (e) => {
+    console.log(e.target);
+    if(e.target.parentElement.classList.contains('arrow-right')) {
+      if(mobileState.currentIdx === slides.length - 1) return;
+      mobileState.currentIdx += 1;
+      changeDot();
+    } else {
+      if(mobileState.currentIdx === 0) return;
+      mobileState.currentIdx -= 1;
+      changeDot();
+    }
+    setPositionByIdx();
   }
 
 
@@ -134,13 +193,15 @@ const REV_SLIDER = (() => {
   
   return {
     init: () => {
-      if (window.matchMedia('max-width: 768px')) {
+        getReviews();
         resizeListener();
         disableContextMenu();
-        setSlidePosition();
         createDots();
-        mobileSlideEvents();
-      }
+        if(window.matchMedia('(max-width: 1000px)').matches) {
+          mobileSlideEvents();
+        } else {
+          desktopSlideEvents();
+        }
     }
   } 
 

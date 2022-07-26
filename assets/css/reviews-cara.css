@@ -4,10 +4,52 @@
   width: 100%;
 }
 
+.r-carousel-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.r-carousel-img img {
+  height: 40px;
+  width: 40px;
+}
+
+.reviewer-name {
+  font-style: italic;
+}
+
 .reviews {
   overflow: hidden;
 }
 
+.arrow img {
+  height: 34px;
+  width: auto;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow-right {
+  right: 20%;
+  top: 48.7%;
+  transform-origin: top;
+  transform: rotate(180deg) translateY(-50%);
+}
+.arrow-left {
+  left: 20%;
+}
+
+.arrows {
+  display: none;
+}
 .reviews .inner-container {
   overflow: hidden;
 }
@@ -75,5 +117,9 @@
 
   .noselect {
 
+  }
+
+  .arrows {
+    display: block;
   }
 }

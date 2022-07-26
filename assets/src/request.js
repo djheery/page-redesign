@@ -1,4 +1,4 @@
-var url = "https://reqbin.com/echo";
+var url = "/s/test.json";
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", url);
