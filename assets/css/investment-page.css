@@ -1,5 +1,6 @@
 #investment-page {
-  background-image: url('/assets/images/ny.png');
+  background-image: url('/assets/images/family-main-3.jpg');
+  /* background-image: url('/assets/images/ny.png'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -251,7 +252,8 @@
 
   .plc-img {
     width: 40%;
-    background: url('/assets/images/iv-card.png');
+    /* background: url('/assets/images/iv-card.png'); */
+    background: url('/assets/images/fam-1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
